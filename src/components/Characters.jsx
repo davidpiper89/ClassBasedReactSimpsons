@@ -33,7 +33,10 @@ class Characters extends Component {
               </>
             )}
             <h2>
-              <button onClick={() => this.props.removeCharacter(item.quote)}>
+              <button
+                onClick={() => this.props.removeCharacter(item.quote)}
+                className="remove-button"
+              >
                 Remove
               </button>
             </h2>

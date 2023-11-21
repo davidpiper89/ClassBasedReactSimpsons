@@ -5,8 +5,11 @@ class Likes extends Component {
   render() {
     return (
       <h2>
-        <button onClick={() => this.props.addLiked(this.props.item.quote)}>
-          {this.props.item.liked ? "Liked" : "Like?"}
+        <button
+          onClick={() => this.props.addLiked(this.props.item.quote)}
+          className="likes-button"
+        >
+          {this.props.item.liked ? "Liked" : "Like"}
         </button>
       </h2>
     );
