@@ -13,14 +13,14 @@ class Sort extends Component {
 
   render() {
     return (
-      <label>
-        Sort By..
+      <>
+        <label>Sort By..</label>
         <select name="sort" onInput={this.props.onInput}>
           {this.state.options.map((option) => (
             <option value={option.id}>{option.name} </option>
           ))}
         </select>
-      </label>
+      </>
     );
   }
 }

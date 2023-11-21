@@ -111,33 +111,46 @@ class App extends Component {
     }
 
     return (
-      <>
-        <h1>Simpsons quotes</h1>
-        <p>Total No. of Likes: {total}</p>
-        <h2 onInput={this.onInput}>
-          Add Character:
-          <input
-            value={this.state.character}
-            type="text"
-            name="character"
-          ></input>
-          and quote:
-          <input value={this.state.quote} type="text" name="quote"></input>
-          <button onClick={this.addCharacter}>Add</button>
-        </h2>
+      <div className="app-container">
+        <header className="app-header">
+          <h1>Simpsons Quotes</h1>
+          <p>Total No. of Likes: {total}</p>
+        </header>
 
-        <h2 onInput={this.onInput}>
-          Search: <input type="text" name="search"></input>
-        </h2>
-        <Sort onInput={this.sortInput} />
-        {
-          <Characters
-            characters={copy}
-            removeCharacter={this.removeCharacter}
-            addLiked={this.addLiked}
-          />
-        }
-      </>
+        <div className="input-section">
+          <div className="add-character">
+            <label>Add Character:</label>
+            <input
+              value={this.state.character}
+              type="text"
+              name="character"
+              onChange={this.onInput}
+            />
+            <label>and Quote:</label>
+            <input
+              value={this.state.quote}
+              type="text"
+              name="quote"
+              onChange={this.onInput}
+            />
+            <button onClick={this.addCharacter}>Add</button>
+          </div>
+
+          <div className="search-section">
+            <label>Search:</label>
+            <input type="text" name="search" onChange={this.onInput} />
+          </div>
+          <div className="sort-section">
+            <Sort onInput={this.sortInput} />
+          </div>
+        </div>
+
+        <Characters
+          characters={copy}
+          removeCharacter={this.removeCharacter}
+          addLiked={this.addLiked}
+        />
+      </div>
     );
   }
 }
