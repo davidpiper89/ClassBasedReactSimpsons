@@ -24,16 +24,15 @@
   .input-section {
     grid-area: input;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 10px;
     background-color: #fff;
     border-bottom: 1px solid #eee;
   }
   
-  .add-character, .search-section {
+  .add-character, .search-section, .sort-section  {
     display: grid;
-    grid-template-columns: 1fr 1fr;                
+    grid-template-columns: 20% 30%;                
     gap: 10px;
     align-items: center;
     text-align: right;
@@ -42,8 +41,8 @@
     grid-column: 2;
   }
 
-  .add-character button, .search-section button {
-    width: 50%; 
+  .add-character button {
+    max-width: 75px;
     padding: 5px 10px; 
     background-color: #007bff;
     color: white;
@@ -52,16 +51,10 @@
     cursor: pointer;
   }
   
-  .add-character button:hover, .search-section button:hover {
+  .add-character button:hover {
     background-color: #0056b3;
   }
 
-  .sort-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: end;
-    gap: 10px
-  }
   
   .characters {
     grid-area: characters;
